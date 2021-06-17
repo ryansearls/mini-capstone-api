@@ -10,4 +10,5 @@
 
   product2 = Product.create(name: "Scotty_cameron", price: 400, image_url: "https://www.scottycameron.com/media/12383/18select_familylanding_newport.jpg", description: "Putt like the pros!")
 
-  product3 = Product.create(name: "Taylormade_m4", price: 5000, image_url: "https://image.globalgolf.com/dynamic/1042862/aci/sole-view/taylormade-m4-2018-driver.jpg?s=350", description: "Hit the ball further and straighter.")
+  product3 = Product.create(name: "Taylormade_m4", price: 500, image_url: "https://image.globalgolf.com/dynamic/1042862/aci/sole-view/taylormade-m4-2018-driver.jpg?s=350", description: "Hit the ball further and straighter.")
+  
