@@ -13,5 +13,9 @@ Rails.application.routes.draw do
   get "/taylormade_path" => "products#taylormade" #url query parameter
   
   get "/first_product/:key" => "products#titleist" #url segment parameter
+
+  get "/products", controller: "products", action: "index"
+
+  get "products/:id", controller: "products", action: "show"
   
 end

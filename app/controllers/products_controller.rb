@@ -1,9 +1,16 @@
 class ProductsController < ApplicationController
 
-  # def all_products
-  #   product = Product.all
-  #   render json: product.as_json
-  # end 
+  def index
+    product = Product.all
+    render json: product.as_json
+  end 
+
+
+  def show
+    product_id = params["id"]
+    product = Product.find(product_id)
+    render json: product.as_json
+  end   
   
   # def Titleist_ap2
   #   product = Product.first
@@ -20,11 +27,11 @@ class ProductsController < ApplicationController
   #   render json: product.as_json
   # end 
   
-  def titleist
-    input = params["key"]
-    render json: {message: "The url segmeent is #{input}."}
-  end 
+  # def titleist
+  #   input = params["key"]
+  #   render json: {message: "The url segmeent is #{input}."}
+  # end 
 
-  def taylormade
+  # def taylormade
     
 end
