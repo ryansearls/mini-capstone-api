@@ -14,8 +14,10 @@ Rails.application.routes.draw do
   
   get "/first_product/:key" => "products#titleist" #url segment parameter
 
-  get "/products", controller: "products", action: "index"
+  # get "/products", controller: "products", action: "index"
 
   get "products/:id", controller: "products", action: "show"
+
+  post "/products", controller: "products", action: "create"
   
 end
