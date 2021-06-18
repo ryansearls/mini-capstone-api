@@ -16,12 +16,24 @@ class ProductsController < ApplicationController
     product = Product.new (
       name: params["name"],
       price: params["price"],
-      description: params["description"],)
-      
+      description: params["description"])
+
     product.save
     render json: product.as_json
   end 
 
+  def update
+    product_id = params[:id]
+    product = Product.find_by(id: product_id)
+
+    product.name = params["name"] || product.name
+    product.price = params["price"] || product.price
+    product.description = params["description"] || product.descrption
+    product.save
+    render json: product.as_json
+  end   
+  
+  
   # def Titleist_ap2
   #   product = Product.first
   #   render json: product.as_json
