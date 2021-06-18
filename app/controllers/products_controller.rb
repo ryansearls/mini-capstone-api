@@ -33,7 +33,11 @@ class ProductsController < ApplicationController
     render json: product.as_json
   end   
   
-  
+
+  def destroy
+    product_id = params[:id]
+    product = Product.find_by(id: product_id)
+  end 
   # def Titleist_ap2
   #   product = Product.first
   #   render json: product.as_json
