@@ -2,14 +2,14 @@ class ProductsController < ApplicationController
 
   def index
     product = Product.all
-    render json: product.as_json(methods: [:is_discounted?, :tax, :total])
+    render json: product
   end 
 
 
   def show
     product_id = params["id"]
     product = Product.find(product_id)
-    render json: product.as_json(methods: [:is_discounted?, :tax, :total])
+    render json: product
 
   end   
   
