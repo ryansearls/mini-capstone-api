@@ -15,5 +15,5 @@
   # product = Product.new(name: "Taylormade M4", price: 500, image_url: "https://image.globalgolf.com/dynamic/1042862/aci/sole-view/taylormade-m4-2018-driver.jpg?s=350", description: "Hit the ball further and straighter.")
   # product.save
 
-  product = Product.new(name: " 1 dozen Titleist Pro V1's", price: 50, image_url: "https://images-na.ssl-images-amazon.com/images/I/61bVvDbtiML._AC_SX425_.jpg", description: "Hit the ball further and straighter.")
+  product = Product.new(name: " 1 dozen Titleist Pro V1's", price: 50, image_url: "https://images-na.ssl-images-amazon.com/images/I/61bVvDbtiML._AC_SX425_.jpg", description: "Best golf ball in the game.")
   product.save
