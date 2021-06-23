@@ -1,11 +1,11 @@
 class ProductsController < ApplicationController
-
+  #used to show all
   def index
     product = Product.all
     render json: product
   end 
 
-
+  # used to add new to index
   def create
     product = Product.new(
       name: params[:name],
@@ -18,11 +18,11 @@ class ProductsController < ApplicationController
     render json: product
     else
       render json: {errors: product.errors.full_messages},
-      status: : 418
+      status: 422
     end   
 
   end 
-
+  # used to show specific one
   def show
     product_id = params["id"]
     product = Product.find(product_id)
@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
 
   end   
   
-
+  # used to change an existing
   def update
     product = Product.find_by(id: params[:id])
     product.name = params[:name] || product.name
@@ -42,11 +42,11 @@ class ProductsController < ApplicationController
     render json: product.as_json
     else
       render json: {errors: product.errors.full_messages},
-      status: :unprocessable_entity
+      status: :unprocessable_entity  #<- key in rails to show error message 422
     end
   end
   
-
+  #used to destroy
   def destroy
     product = Product.find_by(id: params[:id])
     product.destroy
