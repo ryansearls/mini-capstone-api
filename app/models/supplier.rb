@@ -1,2 +1,4 @@
 class Supplier < ApplicationRecord
+
+  
 end
