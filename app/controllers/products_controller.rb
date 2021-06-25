@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
 
     
     if product.save
-    render json: product
+    render json: product.as_json
     else
       render json: {errors: product.errors.full_messages},
       status: 422
