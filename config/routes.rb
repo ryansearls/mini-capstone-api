@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   
   get "/first_product/:key" => "products#titleist" #url segment parameter
 
+  
   get "/products", controller: "products", action: "index"
 
   get "products/:id", controller: "products", action: "show"
@@ -24,6 +25,7 @@ Rails.application.routes.draw do
 
   delete "products/:id", controller: "products", action: "destroy"
 
+ #---------------------------------------------------------------------------------
 
   post "/users" => "users#create"
 
