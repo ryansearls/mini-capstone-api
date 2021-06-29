@@ -2,15 +2,15 @@ class Order < ApplicationRecord
   belongs_to :user
   belongs_to :product
 
-  def order_tax
+  # def order_tax
 
-  end 
+  # end 
   
   
-  def order_total
+  # def order_total
 
   
-  end 
+  # end 
 
 
 end
