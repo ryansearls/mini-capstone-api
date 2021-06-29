@@ -23,7 +23,7 @@ class OrdersController < ApplicationController
       status: 422
     end   
   end
-
+3
   def index
     order = current_user.orders
     render json: order.as_json
