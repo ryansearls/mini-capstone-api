@@ -7,7 +7,7 @@ class Product < ApplicationRecord
   validates :active, presence: true
 
   belongs_to :supplier
-
+  has_many :orders
   def is_discounted?
     price <= 10
   end   
