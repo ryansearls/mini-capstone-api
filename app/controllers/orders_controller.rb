@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user
 
   def create
     product = Product.find_by(id: params[:product_id])
@@ -20,17 +21,12 @@ class OrdersController < ApplicationController
       render json: order.as_json
     else
       render json: {errors: order.errors.full_messages},
-      status: 422
     end   
   end
 3
   def index
-    if current_user
       orders = current_user.orders
       render json: orders.as_json
-    else 
-      render json: [], status: :unauthorized 
-    end 
   end   
   
   def show 

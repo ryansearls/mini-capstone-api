@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_admin, except: [:index, :show]
+  
   #used to show all
   def index
     product = Product.all
@@ -7,20 +9,21 @@ class ProductsController < ApplicationController
 
   # used to add new to index
   def create
-    product = Product.new(
-      name: params[:name],
-      price: params[:price],
-      image_url: params[:image_url],
-      description: params[:description])
+      product = Product.new(
+        name: params[:name],
+        price: params[:price],
+        image_url: params[:image_url],
+        description: params[:description],
+        supplier_id: params[:supplier_id]
+      )
 
-    
-    if product.save
-    render json: product.as_json
-    else
-      render json: {errors: product.errors.full_messages},
-      status: 422
-    end   
-
+      
+      if product.save
+         render json: product.as_json
+      else
+        render json: {errors: product.errors.full_messages},
+        status: 422
+      end      
   end 
   # used to show specific one
   def show
