@@ -3,7 +3,12 @@ class ProductsController < ApplicationController
   
   #used to show all
   def index
+    if category = params[:category]
+      category = Category.find_by(id: params[:category])
+      
+    else  
     product = Product.all
+    end
     render json: product
   end 
 
