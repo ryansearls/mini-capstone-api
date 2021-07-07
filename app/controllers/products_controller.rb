@@ -3,13 +3,14 @@ class ProductsController < ApplicationController
   
   #used to show all
   def index
-    if category = params[:category]
-      category = Category.find_by(id: params[:category])
-      
-    else  
-    product = Product.all
-    end
-    render json: product
+      products = Product.all
+      if params[:category]
+        category = Category.find_by(name: params[:category])
+        products = category.products
+      else 
+        products = Product.all
+      end 
+      render json: products
   end 
 
   # used to add new to index

@@ -43,5 +43,10 @@ Rails.application.routes.draw do
 
   
 
+  #--------------------------------------
+
+  post "/carted_products" => "carted_product#create"
+
+  
   
 end
