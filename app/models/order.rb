@@ -1,16 +1,11 @@
 class Order < ApplicationRecord
   belongs_to :user
+  has_many :carted_products
+  
+
+
   # belongs_to :product
 
-  # def order_tax
-
-  # end 
-  
-  
-  # def order_total
-
-  
-  # end 
 
 
 end

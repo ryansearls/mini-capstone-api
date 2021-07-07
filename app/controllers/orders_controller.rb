@@ -10,7 +10,8 @@ class OrdersController < ApplicationController
 
     order = Order.new(
       user_id: current_user.id,
-      product_id: params[:product_id],
+      # product_id: params[:product_id],
+      carted_products: current.user.carted_products.where("status = ?", "carted")
       quantity: params[:quantity],
       subtotal: calculated_subtotal,
       tax: calculated_tax,
