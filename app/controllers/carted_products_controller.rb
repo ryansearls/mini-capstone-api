@@ -1,7 +1,6 @@
 class CartedProductsController < ApplicationController
 
   def create
-    if current_user 
     carted_product = CartedProduct.new(
       user_id: current_user.id,
       product_id: params["product_id"],
@@ -9,11 +8,11 @@ class CartedProductsController < ApplicationController
       status: "carted",
 
     )
-    carted_product.save
+    if carted_product.save
     render json: carted_product
 
     else 
-      render json: [], status: :unauthorized
+      render json: {errors: carted_product.errors.full_messages}, status: 422
 
     end
 
