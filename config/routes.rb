@@ -10,20 +10,20 @@ Rails.application.routes.draw do
   # get "/third_product", controller: "products", action: "Taylormade_m4"
 
   
-  get "/taylormade_path" => "products#taylormade" #url query parameter
+  # get "/taylormade_path" => "products#taylormade" #url query parameter
   
-  get "/first_product/:key" => "products#titleist" #url segment parameter
+  # get "/first_product/:key" => "products#titleist" #url segment parameter
 
   
   get "/products", controller: "products", action: "index"
 
-  get "products/:id", controller: "products", action: "show"
+  get "/products/:id", controller: "products", action: "show"
 
-  post "/products/:id", controller: "products", action: "create"
+  post "/products", controller: "products", action: "create"
 
   patch "/products/:id", controller: "products", action: "update"
 
-  delete "products/:id", controller: "products", action: "destroy"
+  delete "/products/:id", controller: "products", action: "destroy"
 
  #---------------------------------------------------------------------------------
 
